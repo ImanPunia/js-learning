@@ -7,7 +7,7 @@ function findSquare(num) {
    }
 
 findSquare('throw');
- //console.log(findSquare('retur'));
+ //console.log(findSquare('return'));
  
  /////----------------------------------------------------\\\\\
   function handleError(num) {
@@ -25,3 +25,46 @@ findSquare('throw');
 
  ////------------------------------------------------------\\\\
 
+
+function nestedTryCatch() {
+  try {
+//throw new Error('yeah');
+    try {
+      throw new Error('first try');
+    }
+    catch(e) {
+        console.log('nested',e.message);
+        throw e;  //retrowing exception and will be handled by imediate catch block
+    }
+    finally {
+      console.log('finally block');
+    }
+  }
+  catch (ex) {
+    console.error('ending ', ex.message);
+  }
+}
+
+nestedTryCatch();
+
+////----------------------------------------------\\\\\
+(function() {
+  try {
+    try {
+      throw new Error('its an error');
+    }
+    catch (ex) {
+      console.error('first catch', ex.message);
+      throw ex;
+    }
+    finally {
+      console.log('return finally');
+      return; // return is treated as return of whole try-catch-finally block
+    }
+  }
+  catch (ex) {
+    console.error('outer block', ex.message);
+  }
+})();
+
+////-------------------------------------------\\\\
