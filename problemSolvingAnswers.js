@@ -6,20 +6,50 @@
  */
 function findMinOperations(nodes,from,to){
 
-    let edges = 7;
+    let edges = from.length;
     let PossibleEdges = nodes-1;
 
     if(edges < PossibleEdges)
         return -1;
-    else if(edges == PossibleEdges)
-        return 0;
-    else 
-        return 1;
+    else if(edges == PossibleEdges){
+        let u = [];
+
+        for(x=1; x< nodes;x++){
+            let i = x.toString()+(x+1).toString();
+            u.push(i);
+        }
+
+        let z=[] ;
+            
+        for(x=0;x<from.length;x++){
+            for(y=x;y<=x;y++){
+                const t = from[x].toString()+to[y].toString();
+                z.push(t)
+            }
+        }
+
+        let p = true ;
+        z.forEach((value, index) => {
+            if(value !== u[index])
+            {
+                p = false;
+                return;
+            }
+        });
+
+        if(p){
+            return 0;
+        } else {
+            return 1;
+        }
+
+    }
+   
 
 }
 
 const a = [1,2,3,4]
-const b = [1,2,3,4]
+const b = [2,3,4,1]
 console.log(findMinOperations(5,a,b));
 
 
