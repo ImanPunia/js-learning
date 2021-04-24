@@ -93,3 +93,78 @@ function calculatePower(base , exp){
 }
     
 findIdealNumber();
+
+/**
+ *  problem 3
+ */
+
+ function MaxMudWallHeight(p,h){
+ j = [];
+    for(i = 0 ; p <= p.length ; p++) {
+     
+
+        for(j = 0 ; h<= h.length; h++){
+           if(i != 0) {
+               difference = p_p - p[i];
+               if(difference > 1 ) {
+                    height_difference = h[i] - p_h;
+                  //  if(height_difference - difference == )
+               } else {
+                   break;
+               }
+           }
+           
+           
+            p_h = h[j];
+        }
+        p_p = p[i];
+    }
+
+//This function will return the max height calculated as per conditions.
+     maxeight=0;
+    for( i=0;i<p.length-1;i++){
+        /*Space between both the sticks is calculated. If it is more than one then height is incremented by 1 unit
+        from the given height*/
+         space = p[i+1]-p[i];
+        if(space>1){
+            maxeight=h[i];
+            for( j=1;j<space;j++){
+                if(j==1){
+                    maxeight++;
+                }else if(maxeight<h[i+1]){
+                    maxeight++;
+                }
+            }
+            j = maxeight;
+        }
+    }		
+    console.log(maxeight);
+    return maxeight;
+
+ }
+
+  y = MaxMudWallHeight([1,3,7],[4,3,3]);
+ console.log(y);
+
+
+ function compareTriplets(a, b) {
+
+    let bobPoints = 0;
+    let alicePoints = 0;
+    let result = [];
+    
+    for(let i = 0; i < a.length ; i ++) {
+        if(a[i] > b[i]){
+            alicePoints = alicePoints + 1;   
+        } else if(a[i] < b[i]) {
+            bobPoints = bobPoints + 1;
+        }
+    }
+
+    result.push();
+
+    const vb =  result.toString();
+    return vb;
+}
+
+console.log(compareTriplets([3,4,5],[8,9,6]));

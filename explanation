@@ -1,0 +1,43 @@
+Promises -------->>>>>>>>>>
+1) ceation of Promises
+2) handling Promises
+
+new Promise /* executor*/ function(resolve , reject ){})
+Promises are for async functions and these functions are initiator inside executor function.
+if the function is succesfull resolve is called otherwise for unexpected errors reasons are passed to the reject handlers.
+
+Static Methods and Prototype Methods
+static methods: can be apllied independently
+instance methods: applies on Promise independently
+
+Promise.prototype.catch(onRejected)
+Promise.prototype.then(onFulfilled, onRejected)
+Promise.prototype.finally(onFinally)
+
+Promise.resolve(value);
+Promise.rejct(value);
+
+Multiple handlers can be added on promise.
+
+Process a set of promises: its good to create an array of promises while dealing with multiple promises.
+
+The Promise.all(iterable) method returns a single Promise that resolves when all of the promises in the iterable argument 
+have resolved or when the iterable argument contains no promises.
+It rejects with the reason of the first promise that rejects.
+
+Thumb Rule:
+then is mapped with resolve and catch is maaped with reject.
+Make sure to write both .catch and .then methods for all the promises.
+If something needs to be done in both cases, use .finally.
+We only get one shot at mutating each promise.
+We can add multiple handlers to a single promise.
+The return type of all the methods in Promise object, whether they are static methods or prototype methods, is again a Promise
+In Promise.all the order of the promises is maintained in the values variable, irrespective of which promise was first resolved.
+
+async await ----->>>>>>>>>
+Extension of Promise
+An async function can contain an await expression that pauses the execution of the async function and waits for the passed 
+Promise's resolution, and then resumes the async function's execution and returns the resolved value. Remember, the await 
+keyword is only valid inside async functions.
+
+Improves the syntax , make it look synchronous

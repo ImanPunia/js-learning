@@ -20,7 +20,7 @@ console.log(promise1);
 function getRandomNumber(start = 1, end = 10) {
     //works when both start,end are >=1 and end > start
     return parseInt(Math.random() * end) % (end-start+1) + start;
-  }
+}
 
 var promiseRandomNumber = new Promise(function(resolve, reject){
     var randomTimeSpan = getRandomNumber(2,10);
