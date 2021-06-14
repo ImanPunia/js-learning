@@ -8,7 +8,7 @@ console.log(u); //{}
 console.log(u.a);  // 2 i.e. fetched from prototype chain
 
 
-/////////////////----------\\\\\\\\\\\\\\\\\\\\\ prototype inheritance
+/////////////////----------\\\\\\\\\\\\\\\\\\\\\ prototype inheritance (we can say between instance and class)
 function setName(name){
     this.name = name;
 }
