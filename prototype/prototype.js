@@ -2,18 +2,18 @@
 const y = {'a': 2};
 const u = Object.create(y);
 
-//prototype links the object i.e. creates new object and link its prototype to existing object
+//prototype links the object i.e. creates new object and link its prototype to existing object (reference not copy)
 console.log(Object.getPrototypeOf(u)); //true
 console.log(u); //{}
 console.log(u.a);  // 2 i.e. fetched from prototype chain
 
 
-/////////////////----------\\\\\\\\\\\\\\\\\\\\\
+/////////////////----------\\\\\\\\\\\\\\\\\\\\\ prototype inheritance
 function setName(name){
     this.name = name;
 }
 
-setName.prototype.yourName = ()=>{
+setName.prototype.yourName = function(){
     return this.name;
 }
 
@@ -21,8 +21,8 @@ var user = new setName('User');
 var admin = new setName('Admin');
 
 // its because prototype creates link between objects, yourName is not found on user , its found on setName.prototype.
-console.log(user.yourName());
-console.log(admin.yourName());
+console.log(user.yourName()); //User
+console.log(admin.yourName()); //Admin
 
 //////////////////////-----------\\\\\\\\\\\\\\\\\\\\\\
 function Data() {
