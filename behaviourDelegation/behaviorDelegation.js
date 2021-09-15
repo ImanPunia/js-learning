@@ -24,3 +24,4 @@ Car.driveCar = function(){
 
 Car.driveCar(); // ignition drive rolling on 4 wheel4 
 Car.drive(); // ignition drive
+//here Car delegates drive and ignition to Vehicle class 
